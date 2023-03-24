@@ -157,7 +157,7 @@ class WysiwygEditor extends Component {
         event.preventDefault();
       }
     }
-     if (event.key === 'Backspace') {
+    if (event.key === 'Backspace') {
       if (this.isEmptyListBlock()) {
         // If user presses backspace key on empty list block, unselect the block type from toolbar
         const newState = RichUtils.toggleBlockType(this.state.editorState);
@@ -173,8 +173,8 @@ class WysiwygEditor extends Component {
     }
     return getDefaultKeyBinding(event);
   };
-  
-    isEmptyListBlock = () => {
+
+  isEmptyListBlock = () => {
 
     // If the user changes block type before entering any text, we can hide the placeholder
     var contentState = this.state.editorState.getCurrentContent();
@@ -462,12 +462,12 @@ class WysiwygEditor extends Component {
     };
     const toolbarShow =
       editorFocused || this.focusHandler.isInputFocused() || !toolbarOnFocus;
-    
-  const EditorClass = classNames({
+
+    const EditorClass = classNames({
       ['rdw-editor-main']: true,
       ['hide-placeholder']: this.isEmptyListBlock()
     }, editorClassName);
-                                   
+
     return (
       <div
         id={this.wrapperId}
